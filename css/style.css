@@ -1,0 +1,11 @@
+:root {
+    --primary-brand-color: #ef5350;
+    --secondary-brand-color: #feca1b;
+    --accent-color: #1e90ff;
+    --brand-text: 'Press Start 2p', cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
