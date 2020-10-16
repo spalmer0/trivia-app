@@ -6,17 +6,27 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script defer src="./js/script.js"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100&effect=neon">
 <!-- TODO: come up with better name -->
     <title>Trivia</title>
 
 </head>
 <body>
-    <header></header>
-    <main>
-        <h1>Welcome to Trivia</h1>
-        
+    <header>
+        <div class="font-effect-neon">
+            <h1>Welcome to Trivia</h1>
+        </div>
+    </header>
+    <main class="flex-ctr">
+        <button id="randBtn">Click Here for a Random Trivia Question</button>
+        <p id="question"></p>
+        <p id="answers"></p>
+        <button id="solveBtn">Click for the Correct Answer</button>
+        <p id="correct"></p>
     </main>
-    <footer></footer>
+    <footer>
+        <p>Copyright &copy; 2020 Stuart Palmer All Rights Reserved</p>
+    </footer>
     
 </body>
 </html>

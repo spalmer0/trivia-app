@@ -2,10 +2,83 @@
     --primary-brand-color: #ef5350;
     --secondary-brand-color: #feca1b;
     --accent-color: #1e90ff;
-    --brand-text: 'Press Start 2p', cursive;
+    /* --brand-text: 'Press Start 2p', cursive; */
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
+}
+
+body {
+    
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Helvetica;
+}
+
+main {
+    flex-grow: 1;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main > section {
+    flex-wrap: wrap;
+    
+}
+
+.card {
+    font-family: var(--brand-text);
+    color: var(--primary-brand-color);
+    text-transform: capitalize;
+    width: 300px;
+    height: 150px;
+    border-radius: 12px;
+    margin: 10px;
+    box-shadow: 1px 1px 1px 1px lightgray;
+
+}
+
+.card:hover {
+    box-shadow: 1px 1px 17px 1px darkgray;
+}
+
+.outline {
+    border: 1px solid var(--accent-color);
+}
+
+.flex-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header, footer {
+    display:flex;
+    align-items: center;
+    color:var(--secondary-brand-color);
+    height: 65px;
+    width: 100%;
+    background-color: var(--primary-brand-color);
+}
+
+header {
+    font-family: var(--brand-text);
+    text-shadow: 1px 1px 5px var(--accent-color);
+    padding-left: 15px;
+    
+}
+
+footer {
+    justify-content: center;
+}
+
+#modal {
+    text-transform: capitalize;
+    line-height: 30px;
+    font-size: 20px;
 }
