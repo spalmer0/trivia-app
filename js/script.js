@@ -2,6 +2,7 @@
 
 //TODO: remove the '=6' and make a variable to represent the number of questions a user wants
 const BASE_URL = 'https://opentdb.com/api.php?amount=6';
+const CATEGORY_URL = 'https://opentdb.com/api_category.php';
 
 
 // Variables
@@ -9,6 +10,7 @@ let triviaData;
 
 
 // Cached Element References
+const $cardsEl = $('#cards');
 const $randBtnEl = $('#randBtn');
 const $question = $('#question');
 const $answers = $('#answers');
@@ -17,66 +19,38 @@ const $correct = $('#correct');
 
 
 // Event Listeners
-$randBtnEl.on('click', handleGetTrivia);
-$solveBtnEl.on('click', handleGetSolution);
+$cardsEl.on('click', 'article', handleClick);
 
 // Functions
-function handleGetTrivia() {
-    
+init();
+
+function init() {
+    getData();
+}
+
+function getData() {
     $.ajax(BASE_URL)
     .then(function(data) {
         triviaData = data;
-        render();    
+        render();
     }, function(error) {
         console.log('Error: ', error);
-    })
+    });
+}
+function handleClick() {
+    
 }
 
-function handleGetSolution() {
-    $correct.text('Correct Answer: ' + triviaData.results[0].correct_answer);
+function generateUI() {
+    return triviaData.results.map(function(trivia) {
+        return `
+            <article class="card flex-ctr outline">
+                <h3>${trivia.category}</h3>
+            </article>`;
+    });
 }
 
 function render() {
-    $correct.text('');
-    $question.text('Question: ' + triviaData.results[0].question);
-    $answers.text('Choices: ' + triviaData.results[0].correct_answer + ', ' +triviaData.results[0].incorrect_answers);
+    $cardsEl.html(generateUI());
 }
-
-// function getData(startURL){
-//     const url = startURL ? startURL : BASE_URL;
-
-//     $.ajax(url)
-//     .then(function(data) {
-//         if(startURL) {
-//             triviaQuestion = data;
-//             render(true);
-//         } else {
-//             triviaData = data;
-//             render();
-//         }
-//     }, function(error) {
-//         console.log('Error: ', error);
-//     });
-// }
-
-// function handleClick(event) {
-//     // const url = this.dataset.url; 
-//     // getData(url);
-//     const category = this.dataset.name;
-//     console.log(event.target);
-// }
-
-// function generateUI() {
-//     return triviaData.results.map(function(trivia) {
-//         return `
-//         <article data-url=${trivia.url}" class=card flex-ctr outline">
-//             <h3>${trivia.category}</h3>
-//             </article>`;
-//     })
-// }
-
-// function render() {
-//     $cardsEl.html(generateUI());
-//     $question.text('Question: ' + triviaData.results[0].question);
-// }
 
