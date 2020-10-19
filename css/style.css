@@ -22,6 +22,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: black;
 }
 
 main > section {
@@ -31,6 +32,7 @@ main > section {
 
 .card {
     font-family: var(--brand-text);
+    background-color: white;
     color: var(--primary-brand-color);
     text-transform: capitalize;
     width: 300px;
@@ -42,7 +44,7 @@ main > section {
 }
 
 .card:hover {
-    box-shadow: 1px 1px 17px 1px darkgray;
+    box-shadow: 1px 1px 100px 1px whitesmoke
 }
 
 .outline {
@@ -74,4 +76,16 @@ header, footer {
     text-transform: capitalize;
     line-height: 30px;
     font-size: 20px;
+
+}
+
+#modal div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal button {
+    margin-left: 10px;
 }

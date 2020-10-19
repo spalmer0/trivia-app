@@ -8,6 +8,8 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100&effect=neon">
 <!-- TODO: come up with better name -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <title>Trivia</title>
 
 </head>
@@ -21,18 +23,19 @@
         <section id="cards" class="flex-ctr">
             
         </section>
-
-        <button id="randBtn">Click Here for a Random Trivia Question</button>
-        <p id="question"></p>
-        <p id="answers"></p>
-        <button id="solveBtn">Click for the Correct Answer</button>
-        <p id="correct"></p>
     </main>
     <footer>
         <div class="font-effect-neon">
             <p>Copyright &copy; 2020 Stuart Palmer All Rights Reserved</p>
         </div>
     </footer>
+
+    <div id="modal" class="modal">
+    
+        <h4 id="question"></h4>
+        <div id="answers"></div>
+        <div id="result"></div>
+    </div>
     
 </body>
 </html>
