@@ -8,9 +8,9 @@ I like trivia and I think this is a fun and easy wasy for users to access a good
 This project is in its "mvp" state.  I hope to incorporate several additional features including:  keeping score, enabling users to select specific categories, etc.
 
 ## Screenshots
-Wireframe
-
-App
+![Screen Shot 2020-10-20 at 7 02 15 AM](https://user-images.githubusercontent.com/34992505/96577969-757c1480-12a2-11eb-82ce-a6141a3e1299.png)
+![Screen Shot 2020-10-20 at 7 01 42 AM](https://user-images.githubusercontent.com/34992505/96577972-7614ab00-12a2-11eb-9b11-ff491fc97c93.png)
+![Screen Shot 2020-10-20 at 6 26 41 AM](https://user-images.githubusercontent.com/34992505/96577973-7614ab00-12a2-11eb-8e60-f6ddc73d979e.png)
 
 ## Features
 - Ability to select number of questions
