@@ -1,52 +1,44 @@
 // Constants
 
 //TODO: remove the '=6' and make a variable to represent the number of questions a user wants
-const BASE_URL = 'https://opentdb.com/api.php?amount=10';
-const CATEGORY_URL = 'https://opentdb.com/api_category.php';
-
+const BASE_URL = 'https://opentdb.com/api.php?amount=';
 
 // Variables
-let triviaData, triviaDetail;
+let triviaData, userInput;
 
 
 // Cached Element References
+const $form = $('form');
+const $input = $('input[type="text"]');
 const $cardsEl = $('#cards');
-const $randBtnEl = $('#randBtn');
 const $question = $('#question');
 const $answers = $('#answers');
-const $solveBtnEl = $('#solveBtn');
 const $correct = $('#correct');
 const $modal = $('#modal');
 const $result = $('#result');
 
 // Event Listeners
+$form.on('submit', getData);
 $cardsEl.on('click', 'article', handleClick);
 $modal.on('click', handleGuess);
 
 // Functions
-init();
-
-function init() {
-    getData();
-}
-
-function getData(triviaQuestion) {
-    const quest = triviaQuestion ? triviaQuestion : BASE_URL;
+function getData(event) {
+    event.preventDefault();
+    userInput = $input.val();
     
-    $.ajax(quest)
-    .then(function(data) {
-        if(triviaQuestion) {
-            triviaDetail = data;
-            render(true);
-        } else {
+        $.ajax(BASE_URL + userInput)
+        .then(function (data) {
             triviaData = data;
             render();
 
-        }
-    }, function(error) {
-        console.log('Error: ', error);
-    });
-}
+        }, function (error) {
+            alert('Error');
+            console.log('Error: ', error);
+        });
+    
+   }
+
 function handleClick() {
     $result.html("");
     const quest = this.dataset.question;
@@ -55,7 +47,7 @@ function handleClick() {
 }
 
 function generateUI() {
-    return triviaData.results.map(function(trivia, index) {
+    return triviaData.results.map(function (trivia, index) {
         return `
             <article data-index="${index}" data-question="${trivia.question}"class="card flex-ctr outline">
                 <h3>${trivia.category}</h3>
@@ -71,22 +63,23 @@ function handleGuess(event) {
     } else {
         $result.html("Incorrect.  The correct answer is: " + correct);
     }
-          
+
 }
 
 
 function generateAnswerUI(questionIndex) {
-// return a html form with answer widgets
+    // return a html form with answer widgets
     const question = triviaData.results[questionIndex];
     const answersArray = triviaData.results[questionIndex].incorrect_answers;
     const correctAnswer = triviaData.results[questionIndex].correct_answer;
     answersArray.push(correctAnswer);
     const randomAnsArr = randomizeAnswers(answersArray);
-       
-    return randomAnsArr.map(function(choice) {
+
+    return randomAnsArr.map(function (choice) {
         return `<button data-correct="${correctAnswer}" data-choice="${choice}">${choice}</button>`
-               
+
     });
+    
 }
 
 function randomizeAnswers(array) {
@@ -102,19 +95,14 @@ function randomizeAnswers(array) {
 
 
 function render(question, index) {
-    if(question && index) {
+    if (question && index) {
         $question.text(question);
         $('#answers').html(`<div>${generateAnswerUI(index).join("")}</div>`);
         $modal.modal();
-        
+
     } else {
         $cardsEl.html(generateUI());
-        
+
 
     }
 }
-
-
-
-
-
