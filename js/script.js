@@ -27,6 +27,9 @@ function getData(event) {
     event.preventDefault();
     userInput = $input.val();
     
+    if (userInput === '') {
+        alert('Please enter a number of questions.');
+    } else {
         $.ajax(BASE_URL + userInput)
         .then(function (data) {
             triviaData = data;
@@ -36,6 +39,8 @@ function getData(event) {
             alert('Error');
             console.log('Error: ', error);
         });
+
+    }
     
    }
 
