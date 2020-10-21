@@ -1,8 +1,6 @@
 :root {
     --primary-brand-color: black;
-    /* --secondary-brand-color: #feca1b; */
-    /* --accent-color: #1e90ff; */
-    /* --brand-text: 'Press Start 2p', cursive; */
+ 
 }
 
 * {
@@ -11,11 +9,19 @@
 }
 
 body {
-    
+
     flex-direction: column;
     min-height: 100vh;
     font-family: Helvetica;
     background-color: black;
+}
+
+.brain {
+    margin-bottom: auto;
+    height: 75px;
+    width: 75px;
+    opacity: 40%;
+    margin: 10px;
 }
 
 main {
@@ -27,9 +33,13 @@ main {
     color: white;
 }
 
-main > section {
+form {
+    margin: 50px 0px 0px 0px;
+}
+
+main>section {
     flex-wrap: wrap;
-    
+
 }
 
 .card {
@@ -60,10 +70,11 @@ main > section {
 
 }
 
-header, footer {
-    display:flex;
+header,
+footer {
+    display: flex;
     align-items: center;
-    color:var(--secondary-brand-color);
+    color: var(--secondary-brand-color);
     height: 65px;
     width: 100%;
     background-color: var(--primary-brand-color);
