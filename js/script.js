@@ -8,6 +8,7 @@ let triviaData, userInput;
 
 
 // Cached Element References
+const $main = $('main');
 const $form = $('form');
 const $input = $('input[type="text"]');
 const $cardsEl = $('#cards');
@@ -25,6 +26,8 @@ $modal.on('click', handleGuess);
 // Functions
 function getData(event) {
     event.preventDefault();
+    $("main").css('background-color', 'black');
+    $("main").css('background-image', 'none');
     userInput = $input.val();
 
     if (userInput === '') {
@@ -122,5 +125,6 @@ function scrollFunction() {
     document.getElementById("header").style.height = "30px";
   } else {
     document.getElementById("header").style.fontSize = "30px";
+    document.getElementById("header").style.height = "65px";
   }
 }

@@ -32,6 +32,7 @@ This project is in its "mvp" state.  I hope to incorporate several additional fe
 - Compete against others
 - Choose category
 - Win if user gets x answers correct in a row
+- if card is clicked change the color so it doesn't get selected multiple times
 
 ## API Reference
 This app uses the Open Trivia DB: https://opentdb.com/api_config.php

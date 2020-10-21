@@ -1,6 +1,6 @@
 :root {
     --primary-brand-color: black;
- 
+
 }
 
 * {
@@ -10,16 +10,21 @@
 
 body {
 
-    
+
     font-family: Helvetica;
     background-color: black;
+}
+
+#beer {
+    max-width: 100%;
+    height: auto;
 }
 
 .brain {
     margin-bottom: auto;
     height: 75px;
     width: 75px;
-    
+    border-radius: 10px;
     margin: 10px;
 }
 
@@ -44,7 +49,7 @@ main>section {
 }
 
 .card {
-    font-family: var(--brand-text);
+
     background-color: white;
     color: var(--primary-brand-color);
     text-transform: capitalize;
@@ -57,11 +62,13 @@ main>section {
 }
 
 .card:hover {
-    box-shadow: 1px 1px 100px 1px whitesmoke
+    box-shadow: 1px 1px 100px 1px whitesmoke;
 }
 
+
+
 .outline {
-    border: 1px solid var(--accent-color);
+    border: 1px solid grey;
 }
 
 .flex-ctr {
@@ -75,7 +82,6 @@ main>section {
 footer {
     display: flex;
     align-items: center;
-    color: var(--secondary-brand-color);
     height: 65px;
     width: 100%;
     background-color: var(--primary-brand-color);
@@ -86,11 +92,12 @@ footer {
     font-size: 30px;
     font-weight: normal;
     position: fixed;
-    opacity: 100%;
     transition: 0.2s
 }
 
-
+#footer {
+    position: fixed;
+}
 
 #modal {
     text-transform: capitalize;
@@ -108,4 +115,12 @@ footer {
 
 #modal button {
     margin-left: 10px;
+}
+
+#question {
+    margin-bottom: 10px;
+}
+
+#result {
+    margin-top: 10px;
 }
