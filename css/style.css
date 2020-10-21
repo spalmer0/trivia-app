@@ -1,7 +1,6 @@
 :root {
     --primary-brand-color: black;
-
-}
+    }
 
 * {
     box-sizing: border-box;
@@ -15,10 +14,6 @@ body {
     background-color: black;
 }
 
-#beer {
-    max-width: 100%;
-    height: auto;
-}
 
 .brain {
     margin-bottom: auto;
@@ -36,11 +31,19 @@ main {
     justify-content: center;
     background-color: black;
     color: white;
+    background-image: url("https://i2.wp.com/stevencbird.com/wp-content/uploads/2015/07/wings-beer.jpg?ssl=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Grandstander', cursive;
 }
 
 form {
     margin-top: 100px;
     margin-bottom: auto;
+}
+
+form h3 {
+    margin: 10px 0px 10px 0px;
 }
 
 main>section {
@@ -103,6 +106,7 @@ footer {
     text-transform: capitalize;
     line-height: 30px;
     font-size: 20px;
+    font-family: 'Grandstander', cursive;
 
 }
 
