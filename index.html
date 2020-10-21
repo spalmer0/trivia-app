@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +8,28 @@
     <script defer src="./js/script.js"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100&effect=neon">
-<!-- TODO: come up with better name -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-    <title>Trivia</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <title>Trivia Night</title>
 
 </head>
+
 <body>
-    <header>
+    <div id="header">
         <div class="font-effect-neon">
             <h1>Trivia Night</h1>
         </div>
-    </header>
+    </div>
     <main class="flex-ctr">
         <form>
-            <h2>How many Questions would you like to see?</h2>
+            <h2>Welcome to Trivia Night!</h2>
+            <h3>How many Questions would you like to see?</h3>
             <input type="text" placeholder="#">
             <input type="submit" value="Submit">
         </form>
+
         <section id="cards" class="flex-ctr">
-            
+
         </section>
     </main>
     <footer>
@@ -36,11 +39,12 @@
     </footer>
 
     <div id="modal" class="modal">
-    
+
         <h4 id="question"></h4>
         <div id="answers"></div>
         <div id="result"></div>
     </div>
-    
+
 </body>
+
 </html>

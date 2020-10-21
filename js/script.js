@@ -26,23 +26,23 @@ $modal.on('click', handleGuess);
 function getData(event) {
     event.preventDefault();
     userInput = $input.val();
-    
+
     if (userInput === '') {
         alert('Please enter a number of questions.');
     } else {
         $.ajax(BASE_URL + userInput)
-        .then(function (data) {
-            triviaData = data;
-            render();
+            .then(function (data) {
+                triviaData = data;
+                render();
 
-        }, function (error) {
-            alert('Error');
-            console.log('Error: ', error);
-        });
+            }, function (error) {
+                alert('Error');
+                console.log('Error: ', error);
+            });
 
     }
-    
-   }
+
+}
 
 function handleClick() {
     $result.html("");
@@ -56,6 +56,7 @@ function generateUI() {
         return `
             <article data-index="${index}" data-question="${trivia.question}"class="card flex-ctr outline">
                 <h3>${trivia.category}</h3>
+                <img class = "brain" src="https://img.freepik.com/free-vector/dabbing-brain_6460-268.jpg?size=626&ext=jpg">
             </article>`;
     });
 }
@@ -84,7 +85,7 @@ function generateAnswerUI(questionIndex) {
         return `<button data-correct="${correctAnswer}" data-choice="${choice}">${choice}</button>`
 
     });
-    
+
 }
 
 function randomizeAnswers(array) {
@@ -110,4 +111,16 @@ function render(question, index) {
 
 
     }
+}
+
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    document.getElementById("header").style.fontSize = "15px";
+    document.getElementById("header").style.height = "30px";
+  } else {
+    document.getElementById("header").style.fontSize = "30px";
+  }
 }
