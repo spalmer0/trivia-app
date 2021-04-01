@@ -1,4 +1,4 @@
-# Trivia App
+# Trivia Night
 This app makes an api call to the Open Trivia database to return trivia questions for the user to answer.
 
 ## Getting Started
