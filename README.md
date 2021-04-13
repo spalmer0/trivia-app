@@ -2,7 +2,7 @@
 This app makes an api call to the Open Trivia database to return trivia questions for the user to answer.
 
 ## Getting Started
-Link to application: https://determined-leakey-0b8918.netlify.app/
+Link to application: https://trivianight.netlify.app/
 Initialize user interface by submitting a number of questions to display.
 
 ## Motivation
